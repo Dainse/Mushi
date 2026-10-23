@@ -4,7 +4,7 @@ Mushi es una mascota que lleva y trae **notas de voz** entre el niño o la niña
 
 Además, Mushi tiene vida propia: duerme por la noche, se aburre cuando no hay nadie, celebra las fiestas y el cumpleaños, y de vez en cuando da alguna sorpresa.
 
-> Esta guía corresponde a la versión **v2.5.58**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
+> Esta guía corresponde a la versión **v2.6.1**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
 
 ---
 
@@ -73,9 +73,10 @@ Cada opción tiene un botón **?** que explica qué hace. Las opciones están or
 | **1. Tu Mushi y la Wi-Fi** | Nombre de la mascota y del niño/a, red Wi-Fi principal y una de reserva |
 | **2. Telegram** | Código del bot (con el paso a paso para crearlo) |
 | **3. Ojos y sonido** | Color de los ojos, volumen, sonido al llegar una nota, aviso cuando la escucha |
-| **4. Horario de sueño** | Si duerme por la noche y de qué hora a qué hora |
+| **4. Horario de sueño** | Si duerme por la noche, de qué hora a qué hora, y si saluda al grupo al despertar |
 | **5. Presencia y aburrimiento** | Radar, cuándo se aburre, cuándo apaga la pantalla, sorpresas |
 | **6. Cumpleaños** | El día del cumple del niño/a |
+| **6b. Ranking familiar de la semana** | Si se manda, el día y la hora (por defecto, el domingo 15 minutos antes de dormir) |
 | **7. Actualizaciones** | Si se actualiza solo de madrugada |
 | **Avanzado** (plegado) | Botón, duración de las notas, esperas, sensibilidad del radar, formato y calidad de las notas, micrófono, borrado de mensajes, batería, soporte remoto, Telegram a mano y «Volver a emparejar» |
 
@@ -142,6 +143,8 @@ Si está activado, quien mandó la nota recibe en Telegram un aviso de que ya la
 
 **Horario de sueño.** De serie, Mushi duerme de **21:00 a 8:00**: ojos cerrados, sin sonidos ni avisos. Las notas que lleguen de noche se guardan y las verá por la mañana. Al despertar hace una pequeña animación (sin melodía, para no molestar).
 
+**Buenos días y buenas noches en el grupo.** Al dormirse, Mushi avisa en el grupo ("🌙 Mateo se va a dormir hasta las 8:00…"). Y al despertar saluda: "☀️ ¡Buenos días! Mateo ya está despierto. Tiene 3 notas esperando para escuchar 📬" (si no tiene ninguna, os anima a mandarle una). Espera un minuto y medio tras despertar, para recoger antes las notas de la noche y que el número sea el real. El saludo se quita con `/sueno saludo off` (y vuelve con `/sueno saludo on`), con su botón en la sección Sueño del panel (`/menu`) o con su casilla en el portal (apartado 4).
+
 - **Despertarlo una noche especial:** mantén pulsados **a la vez los dos botones pequeños durante 3 segundos**. Se despierta y sigue despierto el resto de la noche; el admin recibe un aviso. Para volver a dormirlo, el admin manda `/dormir`.
 - **Encender la pantalla si alguien se mueve de noche:** opción del apartado 4 del portal (necesita el radar).
 
@@ -165,7 +168,7 @@ Si pones el **cumpleaños** del niño/a en el portal (apartado 6) o con `/cumple
 2. Mushi te pregunta cuándo dársela, con botones:
    - **▶️ Ahora:** le llega ya, como una nota normal, pero el grupo no la ve.
    - **A una hora** (⏰ En 1 hora, 🌙 Esta noche, ☀️ Mañana, o escribe tú la hora, como `19:30`): le llega como **sorpresa**. A esa hora aparece una **caja de regalo** en los ojos de Mushi; cuando el peque pulsa el botón, se abre con confeti y suena la nota.
-3. Cuando la escuche, te llega un aviso por privado.
+3. Te llegan avisos por privado: con una sorpresa, **cuando le llega a Mushi** (aparece la caja de regalo) y **cuando la abre**; con una nota "Ahora", cuando la escucha.
 
 Ten en cuenta que **si el peque contesta, su respuesta va al grupo** de la familia y la escuchan todos.
 
@@ -173,19 +176,52 @@ Las sorpresas pasan delante de las notas que estuvieran esperando y tienen sus p
 
 **Menú de comandos:** en Telegram, el botón **/** junto al cuadro de texto muestra los comandos que puedes usar, con su explicación. Tócalos en lugar de escribirlos.
 
+**Ranking familiar de la semana 🏆:** por defecto, cada domingo, 15 minutos antes de la hora de dormir, Mushi manda al grupo quién mandó más notas (con medallas), quién habló más, quién preparó más sorpresas, quién fue el madrugador y lo que escuchó y contestó el peque. Con `/ranking` lo ves cuando quieras.
+
 ### 8. Comandos de Telegram
 
 Los comandos los puede usar **el admin**, en el grupo o en privado con el bot. Las respuestas a comandos en el grupo se borran solas al cabo de unos minutos para no llenarlo.
 
 Si escribes mal un comando, Mushi te avisa y te sugiere el correcto. `/ajustes` muestra todos los ajustes y cómo cambiarlos.
 
+**Estilos de ojos.** Además del color, Mushi puede tener estilo, y se combinan entre sí (180 combinaciones):
+
+- **Clásico:** los ojos de siempre.
+- **Pestañas:** tres por ojo, que siguen al párpado al parpadear.
+- **Cejas:** cambian con su ánimo: levantadas cuando tiene notas esperando y caídas cuando se aburre.
+- **Lazo:** un lazo rosa arriba a la izquierda (violeta si los ojos son rosas o fucsia).
+- **Gafitas:** gafas redondas.
+- **Estrellas** y **Corazones:** los brillos de los ojos con esa forma (con Corazones, también el destello del sobre de la nota nueva).
+- **Dibujos animados:** ojos tiernos, con un iris grande y brillante del color elegido. Cambian con su ánimo: sonrientes cuando tiene notas o una sorpresa, con el párpado medio caído cuando se aburre, de cachorrito cuando está triste y bien abiertos cuando te escucha.
+- **Uno cada día:** cambia de estilo cada día (y con el color en "uno cada día", cada día sale una combinación distinta).
+
+Se ven en todas las pantallas con ojos (también con los sobres, el regalo, al grabar, al cargar, en los ajustes, durmiendo, triste o aburrido), y las cejas ponen la cara de cada momento. Se elige con `/estilo`, en la sección ✨ Estilo del panel o en el portal (apartado 3), donde una **vista previa** enseña cómo quedan los ojos al elegir el color y el estilo. Los días de fiesta (cumple, Navidad, Halloween...) el estilo se combina con la decoración; cuando la fiesta pone un gorro, una corona o un antifaz sobre los ojos, todo se queda (los gorros y la corona van en el ojo derecho, encima de las gafitas si las lleva), salvo la ceja de ese ojo, que sale solo en el otro (y con el antifaz de Carnaval o los huevos de Pascua, todo eso se aparta mientras duran).
+
+**El panel con botones (`/menu`).** Si prefieres tocar en vez de escribir, envía `/menu` y Mushi te manda por privado un panel: un solo mensaje con botones que se actualiza al pulsar. Secciones:
+
+- **📊 Estado:** lo que está haciendo, notas sin escuchar, Wi-Fi, batería, versión.
+- **✨ Estilo:** el estilo de los ojos.
+- **🎨 Ojos y sonido:** color (19 colores, arcoíris o uno cada día), volumen, sonido al llegar una nota, aviso de "ha escuchado", y la melodía del despertar (volumen, timbre y un botón para escucharla).
+- **🌙 Sueño:** activarlo y las horas, con ◀️ ▶️.
+- **📡 Radar:** activo, sensibilidad, de noche, cuándo se aburre, cuánto tarda aburrido en apagar la pantalla, y si salen sorpresas al aburrirse y cada cuánto.
+- **🎁 Sorpresas:** las que hay programadas, con un botón para cancelar cada una.
+- **🏆 Ranking:** si se manda, el día y la hora (automática o fija, de 30 en 30 min).
+- **🎂 Cumple:** el cumple y la fiesta de hoy, borrar el cumple, y silenciar 1, 2 u 8 horas.
+- **🎙️ Micro:** la ganancia (bájala si las grabaciones saturan), la duración máxima y mínima de una grabación, el modo de grabar, la calidad y las esperas tras escuchar y tras enviar.
+- **🔋 Batería:** activarla, el ahorro de noche y el detector de cargador.
+- **🛠️ Mantenimiento:** buscar o instalar actualizaciones, las actualizaciones automáticas, el estado completo, el log, volver a dormirlo, apagarlo, abrir el portal y reiniciar. Instalar, apagar, abrir el portal y reiniciar piden confirmación; lo que contestan llega como mensaje aparte.
+
+Al tocar un botón, Mushi hace lo mismo que con el comando escrito, te lo confirma con un aviso en la pantalla del móvil y el panel muestra los valores nuevos. Solo lo puede usar el admin. Algunas cosas se siguen escribiendo, como el día del cumple (`/cumple 14/05`) o calibrar la batería; borrar todo (`/resetall`) no está en el panel, a propósito.
+
 **Ajustes básicos**
 
 | Comando | Qué hace |
 |---|---|
+| `/menu` | Panel con botones para cambiar los ajustes |
 | `/ajustes` | Ver todos los ajustes |
 | `/volumen 70` | Volumen (0-100) |
-| `/color verde` | Color de los ojos (cyan, verde, morado, amarillo) |
+| `/color rosa` | Color de los ojos: turquesa, verde, amarillo, morado, rosa, naranja, rojo, azul, lila, lima, blanco, menta, celeste, coral, dorado, fucsia, violeta, aguamarina, melocotón, arcoíris (va cambiando de color), o `/color cada día` (uno distinto cada día) |
+| `/estilo cejas` | Estilo de los ojos: clásico, pestañas, cejas, lazo, gafitas, estrellas, corazones, animado (dibujos animados), o `/estilo cada día`. Se combina con cualquier color |
 | `/nombre Mushi` | Nombre de la mascota |
 | `/nino Mateo` | Nombre del niño/a (`/nino borrar` para quitarlo) |
 | `/aviso on` / `off` | Sonido al llegar una nota |
@@ -196,6 +232,7 @@ Si escribes mal un comando, Mushi te avisa y te sugiere el correcto. `/ajustes` 
 | Comando | Qué hace |
 |---|---|
 | `/sueno 21-8` | Horario de sueño (`/sueno on` / `off` para activarlo o quitarlo) |
+| `/sueno saludo off` | Quitar el saludo de buenos días al grupo (`on` para volver a ponerlo) |
 | `/dormir` | Volver a dormirlo si se le ha despertado de noche |
 | `/silencio 2` | Silencio durante 2 horas (sin sonidos; los ojos avisan igual). `/silencio off` para acabar |
 | `/aburrido` | Ver la configuración del aburrimiento |
@@ -213,12 +250,16 @@ Si escribes mal un comando, Mushi te avisa y te sugiere el correcto. `/ajustes` 
 | `/fiesta` | Ver qué fiesta es hoy |
 | `/despertar` | Hacer la animación de despertar ahora |
 | `/sorpresas` | Ver o cancelar las sorpresas programadas (en el chat privado con el bot) |
+| `/ranking` | Ver el ranking de la semana |
+| `/ranking dia lunes` | Cambiar el día en que se envía al grupo |
+| `/ranking hora 20:30` | Cambiar la hora de envío (`/ranking auto` para volver a la automática) |
 
 **Sistema**
 
 | Comando | Qué hace |
 |---|---|
 | `/status` | Estado y diagnóstico |
+| `/test` | Autotest: revisa todo el hardware, la red y el sistema (unos 2 minutos) y te manda el informe por privado |
 | `/config` | Abrir el portal de configuración |
 | `/actualizar comprobar` | Ver si hay una versión nueva |
 | `/reiniciar` | Reiniciarlo |
@@ -240,6 +281,8 @@ Mientras se instala por otro medio, la pantalla muestra **«¡No lo apagues!»**
 Para ver si hay novedades en cualquier momento: `/actualizar comprobar`. Para desactivar las actualizaciones automáticas, quita la casilla del apartado 7 del portal.
 
 ### 10. Problemas frecuentes
+
+**Antes de nada, el autotest.** Envía `/test` por privado al bot (o mantén pulsado el botón lateral pequeño 5 segundos). Mushi revisa en unos 2 minutos todo lo que puede fallar, con una pantalla por paso que se va rellenando: la pantalla y el LED, el altavoz y el micrófono (pita y se escucha a sí mismo), el botón grande (te pide pulsarlo), que los botones pequeños no estén atascados, el radar (te pide moverte delante), el sensor de luz (te pide taparlo), la batería, el Wi-Fi, la red (router, DNS e Internet), Telegram, la hora, las actualizaciones, la temperatura, la memoria y los ajustes que conviene revisar. Al final enseña el resultado y te manda un informe con todo lo medido: ✅ bien, ⚠️ aviso, ❌ fallo. Con ese informe se ve enseguida dónde está el problema.
 
 **No se conecta a la Wi-Fi.**
 Comprueba que la red es de 2,4 GHz y la contraseña es correcta (usa **Probar** en el portal). Si Mushi no consigue conectarse, sigue intentándolo solo; si cambiaste de router, abre el portal y elige la red nueva.
