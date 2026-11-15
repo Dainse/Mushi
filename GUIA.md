@@ -4,7 +4,7 @@ Mushi es una mascota que lleva y trae **notas de voz** entre el niño o la niña
 
 Además, Mushi tiene vida propia: duerme por la noche, se aburre cuando no hay nadie, celebra las fiestas y el cumpleaños, y de vez en cuando da alguna sorpresa.
 
-> Esta guía corresponde a la versión **v2.6.1**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
+> Esta guía corresponde a la versión **v2.6.34**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
 
 ---
 
@@ -109,6 +109,27 @@ Si no puedes escanear el QR, busca tu bot en Telegram y escríbele `/start` segu
 
 **Volver a emparejar** (para cambiar de grupo o de admin): en el portal, apartado **Avanzado**, marca **«Volver a emparejar con Telegram»** y guarda. Al reiniciar, Mushi enseñará otra vez el QR.
 
+**Proteger el grupo** (muy recomendable, una sola vez, después de emparejar):
+1. Escribe `/menu` al bot por privado, entra en **🛠️ Mantenimiento** y pulsa **🔒 Proteger grupo** (o escribe `/grupo proteger`).
+2. Lo primero que mira Mushi es que siga en el grupo y sea **administrador** con los permisos **«Eliminar mensajes»** y **«Bloquear usuarios»** (en algunos móviles se llama «Restringir miembros»). Si no, te explica paso a paso cómo arreglarlo (abrir el grupo › tocar su nombre › ✏️ Editar › Administradores) y espera a que vuelvas a pulsar el botón.
+3. Después hace que en el grupo **solo se puedan mandar notas de voz** (nada de textos, fotos, vídeos, stickers ni enlaces, y nadie puede cambiar el grupo ni invitar a otros) y te contesta con una lista de cómo ha quedado.
+4. Hay dos cosas que Telegram no deja hacer a un bot, solo a quien creó el grupo, desde la app. Si la lista las marca con ⚠️, hazlas tú: abre el grupo, toca su nombre, pulsa **✏️ Editar** › **Tipo de grupo** y deja el grupo como **Privado** y con **«Restringir guardar contenido»** activado (así nadie puede reenviar ni guardar las notas).
+5. Las notas de Mateo van siempre protegidas: no se pueden reenviar ni guardar, aunque esto último no esté activado.
+
+**El buzón y el cartero 📬:** el grupo es **el buzón** donde la familia echa las notas, y Mushi es **el cartero** que se las lleva al peque. Para que no se confundan, Mushi le pone al grupo el nombre **«📬 El buzón de Mateo»** (el bot sigue llamándose «Mushi de Mateo») y se lo cuenta al admin. Si alguien le cambia el nombre, Mushi le pregunta al admin si lo deja así o lo vuelve a poner; si elegís otro, se respeta.
+
+**Las fotos de Mushi:** el bot tiene una foto animada (sus ojos, parpadeando y guiñando) y el grupo una fija que es **un buzón rojo con Mushi asomando** sobre fondo verde (así se distinguen de un vistazo en la lista de chats), las dos con la estación del año y con las fiestas (Navidad, Reyes, Halloween, el cumpleaños...). Mushi las cambia solo, de madrugada. Si preferís poner vuestra propia foto en el grupo (por ejemplo, una de Mateo), desmarca la casilla «Foto del grupo con las estaciones y fiestas» en el portal, pulsa **🖼️ Foto grupo** en `/menu` › 🛠️ Mantenimiento o escribe `/foto grupo fija`: Mushi no la tocará.
+
+**Quién entra en el grupo 🚪:** Mushi vigila la puerta del grupo.
+- Si **tú** (el admin) añades a alguien, entra sin más y Mushi le da la bienvenida.
+- Si alguien entra **por otro camino** (lo añade otra persona o usa un enlace normal del grupo), Mushi le quita todos los permisos y te escribe por privado con dos botones: **✅ Permitir** (le devuelve los permisos y le da la bienvenida) o **⛔ Rechazar y banear** (lo saca del grupo y no podrá volver). Ojo: mientras decides, esa persona no puede mandar nada, pero **sí puede ver el grupo**.
+- Para invitar a alguien, lo mejor es el **enlace con aprobación**: escribe `/grupo enlace` y Mushi te da un enlace. Quien lo use **no entra ni ve nada** hasta que pulses Permitir.
+- Mientras alguien espera, no cuenta como familia: no recibe la guía ni puede mandar sorpresas, y si consigue mandar algo al grupo, Mushi no se lo pasa al peque y lo borra.
+- **De noche Mushi duerme** y no ve quién entra hasta que se despierta: quien entre entonces con un enlace normal estará en el grupo hasta por la mañana (sus notas no llegarán al peque). Otro motivo para invitar siempre con `/grupo enlace`: con ese enlace nadie entra sin tu permiso, ni de noche. Si no contestas, Mushi te lo recuerda una vez al día. `/grupo pendientes` te vuelve a mandar los botones.
+- Para todo esto Mushi necesita ser administrador con **«Expulsar usuarios»** y **«Invitar usuarios»** (en Android, «Bloquear usuarios» y «Añadir miembros»). `/grupo` te dice si le falta alguno.
+
+Los **administradores del grupo pueden saltarse estas limitaciones**: deja como administradores solo a quien haga falta. Puedes revisar cómo está el grupo cuando quieras con **🔎 Revisar grupo** (o `/grupo`).
+
 ### 4. El día a día
 
 **Cuando llega una nota:**
@@ -124,7 +145,7 @@ Si está activado, quien mandó la nota recibe en Telegram un aviso de que ya la
 - Las grabaciones demasiado cortas (un toque sin querer) se descartan.
 - Si en ese momento no hay Internet, la nota se guarda y se envía en cuanto vuelva la conexión.
 
-**Los dos botones pequeños** son para los mayores (para despertarlo de noche y para restablecerlo); el peque solo necesita el grande.
+**Los dos botones pequeños** (en el frente, junto al conector USB: uno arriba y otro abajo; el del lateral de la placa es el de reinicio) son para los mayores (para despertarlo de noche y para restablecerlo); el peque solo necesita el grande.
 
 ### 5. Lo que muestran los ojos
 
@@ -143,7 +164,12 @@ Si está activado, quien mandó la nota recibe en Telegram un aviso de que ya la
 
 **Horario de sueño.** De serie, Mushi duerme de **21:00 a 8:00**: ojos cerrados, sin sonidos ni avisos. Las notas que lleguen de noche se guardan y las verá por la mañana. Al despertar hace una pequeña animación (sin melodía, para no molestar).
 
-**Buenos días y buenas noches en el grupo.** Al dormirse, Mushi avisa en el grupo ("🌙 Mateo se va a dormir hasta las 8:00…"). Y al despertar saluda: "☀️ ¡Buenos días! Mateo ya está despierto. Tiene 3 notas esperando para escuchar 📬" (si no tiene ninguna, os anima a mandarle una). Espera un minuto y medio tras despertar, para recoger antes las notas de la noche y que el número sea el real. El saludo se quita con `/sueno saludo off` (y vuelve con `/sueno saludo on`), con su botón en la sección Sueño del panel (`/menu`) o con su casilla en el portal (apartado 4).
+**Buenos días y buenas noches en el grupo.** Solo dos mensajes al día, de dos líneas y cada día distintos. Por la mañana, Mushi cuenta cómo se ha despertado y cuántas notas hay en el buzón; debajo, un día la carrera para ver quién le manda la primera nota y otro un reto o una misión secreta. Por la noche dice qué va a soñar y, un día, cuántas notas ha escuchado Mateo (o que os ha respondido) y otro una idea para dejarle algo para la mañana:
+
+> 🌻 ¡Muy buenos días! Mushi se ha despertado con un bostezo de hipopótamo 🥱 · 📬 2 notas esperando
+> 🕵️ Misión secreta: imitad a un animal y que Mateo adivine cuál es 🐸
+
+Espera un minuto y medio tras despertar, para recoger antes las notas de la noche y que el número sea el real. Los días de fiesta y el cumpleaños, el saludo es su anuncio especial. El saludo se quita con `/sueno saludo off` (y vuelve con `/sueno saludo on`), con su botón en la sección Sueño del panel (`/menu`) o con su casilla en el portal (apartado 4).
 
 - **Despertarlo una noche especial:** mantén pulsados **a la vez los dos botones pequeños durante 3 segundos**. Se despierta y sigue despierto el resto de la noche; el admin recibe un aviso. Para volver a dormirlo, el admin manda `/dormir`.
 - **Encender la pantalla si alguien se mueve de noche:** opción del apartado 4 del portal (necesita el radar).
@@ -165,14 +191,21 @@ Si pones el **cumpleaños** del niño/a en el portal (apartado 6) o con `/cumple
 **Notas solo de tu parte y sorpresas** 🎁: cualquier familiar del grupo puede mandarle al peque una nota que el resto del grupo no vea, ya o a una hora concreta (un "buenas noches", una felicitación…).
 
 1. Abre el **chat privado con el bot de Mushi** (no el grupo) y manda la nota de voz, como siempre.
-2. Mushi te pregunta cuándo dársela, con botones:
-   - **▶️ Ahora:** le llega ya, como una nota normal, pero el grupo no la ve.
-   - **A una hora** (⏰ En 1 hora, 🌙 Esta noche, ☀️ Mañana, o escribe tú la hora, como `19:30`): le llega como **sorpresa**. A esa hora aparece una **caja de regalo** en los ojos de Mushi; cuando el peque pulsa el botón, se abre con confeti y suena la nota.
-3. Te llegan avisos por privado: con una sorpresa, **cuando le llega a Mushi** (aparece la caja de regalo) y **cuando la abre**; con una nota "Ahora", cuando la escucha.
+2. Mushi te recuerda que su chat privado es para las sorpresas y te pregunta qué hacer con la nota, con botones:
+   - **📬 Echarla al buzón:** por si la mandaste aquí sin querer. Mushi la pone en el grupo (con tu nombre) para que la oiga toda la familia, y el peque la escucha como cualquier otra. No hay que volver a grabarla.
+   - **🎁 Sorpresa a una hora** (luego ⏰ En 1 hora, 🌙 Esta noche, ☀️ Mañana, o escribe tú la hora, como `19:30`): le llega como **sorpresa**. A esa hora aparece una **caja de regalo** en los ojos de Mushi; cuando el peque pulsa el botón, se abre con confeti y suena la nota. También puedes escribir la hora directamente.
+   - **▶️ Solo para Mateo, ahora:** le llega ya, como una nota normal, pero el grupo no la ve.
+3. Te llegan avisos por privado: con una sorpresa, **cuando le llega a Mushi** (aparece la caja de regalo) y **cuando la abre**; con una nota echada al buzón o "ahora", cuando la escucha.
 
 Ten en cuenta que **si el peque contesta, su respuesta va al grupo** de la familia y la escuchan todos.
 
 Las sorpresas pasan delante de las notas que estuvieran esperando y tienen sus propios huecos en el buzón, así que llegan a su hora aunque haya muchas notas sin escuchar (si aun así no cabe, Mushi te avisa y la entrega en cuanto haya sitio). Mientras hay sorpresas esperando, abajo a la izquierda de la pantalla brilla un regalito con su número. Si a esa hora Mushi duerme, la sorpresa espera a que se despierte. Para ver o cancelar las que has programado, escribe `/sorpresas` en el chat privado con el bot.
+
+**Versiones de pruebas 🧪.** Si tu Mushi tiene una versión de pruebas (te avisa por privado al instalarla y lo verás en `/status`), cada día manda su registro técnico de las últimas 24 h también a soporte, para comprobar que todo va bien. Lleva lo que hace Mushi (horas, nombres de quien manda notas, avisos), nunca las notas de voz. Se acaba solo al instalar la versión final, y puedes pararlo antes con `/pruebas off`.
+
+**Lista de soporte.** Para poder ayudarte, Mushi apunta en la lista de soporte su número de serie, el nombre de su bot y su versión, y nada más: ni nombres, ni mensajes, ni notas. Lo hace al terminar la configuración y cada vez que se actualiza.
+
+**Solo la familia.** El chat privado del bot solo atiende a quien está en el grupo de la familia. Si le escribe alguien de fuera, Mushi no le contesta a nada (tampoco a sus notas de voz), y lo bloquea durante 24 horas. Si luego entra en el grupo, vuelve a atenderle.
 
 **Menú de comandos:** en Telegram, el botón **/** junto al cuadro de texto muestra los comandos que puedes usar, con su explicación. Tócalos en lugar de escribirlos.
 
@@ -260,12 +293,19 @@ Al tocar un botón, Mushi hace lo mismo que con el comando escrito, te lo confir
 |---|---|
 | `/status` | Estado y diagnóstico |
 | `/test` | Autotest: revisa todo el hardware, la red y el sistema (unos 2 minutos) y te manda el informe por privado |
+| `/grupo` | Cómo está el grupo; `/grupo proteger`: solo notas de voz y comprobar la privacidad |
+| `/foto` | Las fotos de Mushi; `/foto grupo fija` para poner la vuestra en el grupo, `/foto grupo auto` para volver a las de Mushi |
+| `/fiesta avisos off` | No avisar al grupo al empezar cada estación y fiesta (`/fiesta avisos on` para volver) |
 | `/config` | Abrir el portal de configuración |
-| `/actualizar comprobar` | Ver si hay una versión nueva |
+| `/actualizar comprobar` | Ver si hay una versión nueva (`/actualizar` a secas explica todas las opciones) |
 | `/reiniciar` | Reiniciarlo |
 | `/apagar` | Apagar la pantalla hasta tocar el botón (`/apagar 3h` durante 3 horas) |
 | `/salida` | Ver las notas grabadas que esperan a enviarse |
+| `/log hoy` · `/log ayer` | El registro técnico de hoy o de ayer, como archivo, por privado (para el soporte) |
+| `/log diario on` | Cada día, a partir de las 8:30, el registro de las últimas 24 h por privado (`/log diario off` para pararlo) |
+| `/grupo enlace` · `/grupo pendientes` | Invitar al grupo con tu aprobación · ver quién espera para entrar |
 | `/remoto on` | Abrir el soporte remoto unas horas, para que te puedan ayudar |
+| `/pruebas` | Solo en las versiones de pruebas: ver si Mushi manda su registro diario a soporte (`/pruebas off` para pararlo, `/pruebas on` para volver a activarlo) |
 | `/resetall` | Restablecer de fábrica (pide confirmación) |
 
 ### 9. Actualizaciones
@@ -282,7 +322,7 @@ Para ver si hay novedades en cualquier momento: `/actualizar comprobar`. Para de
 
 ### 10. Problemas frecuentes
 
-**Antes de nada, el autotest.** Envía `/test` por privado al bot (o mantén pulsado el botón lateral pequeño 5 segundos). Mushi revisa en unos 2 minutos todo lo que puede fallar, con una pantalla por paso que se va rellenando: la pantalla y el LED, el altavoz y el micrófono (pita y se escucha a sí mismo), el botón grande (te pide pulsarlo), que los botones pequeños no estén atascados, el radar (te pide moverte delante), el sensor de luz (te pide taparlo), la batería, el Wi-Fi, la red (router, DNS e Internet), Telegram, la hora, las actualizaciones, la temperatura, la memoria y los ajustes que conviene revisar. Al final enseña el resultado y te manda un informe con todo lo medido: ✅ bien, ⚠️ aviso, ❌ fallo. Con ese informe se ve enseguida dónde está el problema.
+**Antes de nada, el autotest.** Envía `/test` por privado al bot (o mantén pulsado el botón pequeño de arriba 5 segundos). Mushi revisa en unos 2 minutos todo lo que puede fallar, con una pantalla por paso que se va rellenando: la pantalla y el LED, el altavoz y el micrófono (pita y se escucha a sí mismo), el botón grande (te pide pulsarlo), que los botones pequeños no estén atascados, el radar (te pide moverte delante), el sensor de luz (te pide taparlo), la batería, el Wi-Fi, la red (router, DNS e Internet), Telegram, la hora, las actualizaciones, la temperatura, la memoria y los ajustes que conviene revisar. Al final enseña el resultado y te manda un informe con todo lo medido: ✅ bien, ⚠️ aviso, ❌ fallo. Con ese informe se ve enseguida dónde está el problema.
 
 **No se conecta a la Wi-Fi.**
 Comprueba que la red es de 2,4 GHz y la contraseña es correcta (usa **Probar** en el portal). Si Mushi no consigue conectarse, sigue intentándolo solo; si cambiaste de router, abre el portal y elige la red nueva.
@@ -313,6 +353,6 @@ Activa el soporte remoto (`/remoto on`, o la casilla del apartado Avanzado del p
 Borra todos los ajustes (Wi-Fi, Telegram, nombres…) y Mushi vuelve a nacer como el primer día.
 
 - **Por Telegram:** el admin manda `/resetall` y confirma.
-- **Con los botones:** mantén pulsado el **botón lateral pequeño** mientras lo enchufas. En la pantalla aparece la pregunta: el **botón BOOT acepta** y el lateral cancela (si no se pulsa nada en 30 segundos, se cancela solo).
+- **Con los botones:** mantén pulsado el **botón pequeño de arriba** mientras lo enchufas. En la pantalla aparece la pregunta: el **de abajo acepta** y el de arriba cancela (si no se pulsa nada en 30 segundos, se cancela solo).
 
 Después, configúralo de nuevo como en el [Inicio rápido](#inicio-rápido).
