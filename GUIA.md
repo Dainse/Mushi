@@ -4,7 +4,7 @@ Mushi es una mascota que lleva y trae **notas de voz** entre el niño o la niña
 
 Además, Mushi tiene vida propia: duerme por la noche, se aburre cuando no hay nadie, celebra las fiestas y el cumpleaños, y de vez en cuando da alguna sorpresa.
 
-> Esta guía corresponde a la versión **v2.6.35**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
+> Esta guía corresponde a la versión **v2.6.36**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
 
 ---
 
