@@ -4,7 +4,7 @@ Mushi es una mascota que lleva y trae **notas de voz** entre el niño o la niña
 
 Además, Mushi tiene vida propia: duerme por la noche, se aburre cuando no hay nadie, celebra las fiestas y el cumpleaños, y de vez en cuando da alguna sorpresa.
 
-> Esta guía corresponde a la versión **v2.6.36**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
+> Esta guía corresponde a la versión **v2.6.38**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
 
 ---
 
@@ -162,7 +162,7 @@ Si está activado, quien mandó la nota recibe en Telegram un aviso de que ya la
 
 ### 6. Sueño, aburrimiento y sorpresas
 
-**Horario de sueño.** De serie, Mushi duerme de **21:00 a 8:00**: ojos cerrados, sin sonidos ni avisos. Las notas que lleguen de noche se guardan y las verá por la mañana. Al despertar hace una pequeña animación (sin melodía, para no molestar).
+**Horario de sueño.** De serie, Mushi duerme de **21:00 a 8:00**: ojos cerrados, sin sonidos ni avisos. Las notas que lleguen de noche se guardan y las verá por la mañana. Al despertar hace una pequeña animación (sin melodía, para no molestar). Los comandos que le mandes mientras duerme no los hace al despertar, para no hacerlos todos de golpe: te manda un mensaje con la lista y un botón para cada uno, por si aún quieres hacerlo (lo mismo si le llegan con más de 10 minutos de retraso por un corte).
 
 **Buenos días y buenas noches en el grupo.** Solo dos mensajes al día, de dos líneas y cada día distintos. Por la mañana, Mushi cuenta cómo se ha despertado y cuántas notas hay en el buzón; debajo, un día la carrera para ver quién le manda la primera nota y otro un reto o una misión secreta. Por la noche dice qué va a soñar y, un día, cuántas notas ha escuchado Mateo (o que os ha respondido) y otro una idea para dejarle algo para la mañana:
 
@@ -302,7 +302,8 @@ Al tocar un botón, Mushi hace lo mismo que con el comando escrito, te lo confir
 | `/apagar` | Apagar la pantalla hasta tocar el botón (`/apagar 3h` durante 3 horas) |
 | `/salida` | Ver las notas grabadas que esperan a enviarse |
 | `/log hoy` · `/log ayer` | El registro técnico de hoy o de ayer, como archivo, por privado (para el soporte) |
-| `/log diario on` | Cada día, a partir de las 8:30, el registro de las últimas 24 h por privado (`/log diario off` para pararlo) |
+| `/log diario on` | Cada día, a partir de las 8:30, el registro de las últimas 24 h por privado (`/log diario off` para pararlo). Si Mushi se ha reiniciado (por ejemplo, al actualizarse), lo de antes del reinicio también va |
+| `/log anterior` | Lo que pasó antes del último reinicio, como archivo, por privado |
 | `/grupo enlace` · `/grupo pendientes` | Invitar al grupo con tu aprobación · ver quién espera para entrar |
 | `/remoto on` | Abrir el soporte remoto unas horas, para que te puedan ayudar |
 | `/pruebas` | Solo en las versiones de pruebas: ver si Mushi manda su registro diario a soporte (`/pruebas off` para pararlo, `/pruebas on` para volver a activarlo) |
