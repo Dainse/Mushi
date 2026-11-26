@@ -4,7 +4,7 @@ Mushi es una mascota que lleva y trae **notas de voz** entre el niño o la niña
 
 Además, Mushi tiene vida propia: duerme por la noche, se aburre cuando no hay nadie, celebra las fiestas y el cumpleaños, y de vez en cuando da alguna sorpresa.
 
-> Esta guía corresponde a la versión **v2.6.38**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
+> Esta guía corresponde a la versión **v2.6.39**. Las novedades de cada versión están en las [notas de las versiones](../../releases).
 
 ---
 
@@ -298,7 +298,7 @@ Al tocar un botón, Mushi hace lo mismo que con el comando escrito, te lo confir
 | `/fiesta avisos off` | No avisar al grupo al empezar cada estación y fiesta (`/fiesta avisos on` para volver) |
 | `/config` | Abrir el portal de configuración |
 | `/actualizar comprobar` | Ver si hay una versión nueva (`/actualizar` a secas explica todas las opciones) |
-| `/reiniciar` | Reiniciarlo |
+| `/reiniciar` | Reiniciarlo (cuando vuelve a estar en marcha, te avisa) |
 | `/apagar` | Apagar la pantalla hasta tocar el botón (`/apagar 3h` durante 3 horas) |
 | `/salida` | Ver las notas grabadas que esperan a enviarse |
 | `/log hoy` · `/log ayer` | El registro técnico de hoy o de ayer, como archivo, por privado (para el soporte) |
